@@ -11,6 +11,7 @@ pyqt5-stubs = "*"
 pyqt5-tools = "*"
 
 
+
 [dev-packages]
 
 [requires]
