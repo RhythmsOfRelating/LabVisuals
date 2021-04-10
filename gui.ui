@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>968</width>
-    <height>638</height>
+    <width>1420</width>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="VisualsBox">
@@ -22,6 +25,9 @@
       <width>191</width>
       <height>191</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
      <string>Visuals</string>
@@ -182,6 +188,10 @@
       <height>111</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="title">
      <string>Settings</string>
     </property>
@@ -197,6 +207,9 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QCheckBox" name="show_gui_check">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="text">
          <string>Show GUI (G)</string>
         </property>
@@ -232,6 +245,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>1</string>
           </property>
@@ -246,10 +262,13 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>370</y>
+      <y>380</y>
       <width>191</width>
       <height>151</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
      <string>Info</string>
@@ -450,18 +469,26 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>0</y>
-      <width>791</width>
-      <height>591</height>
+      <x>320</x>
+      <y>190</y>
+      <width>520</width>
+      <height>271</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="CentralView">
+    <layout class="QHBoxLayout" name="horizontalLayout_13">
      <item>
-      <widget class="QGraphicsView" name="head_one"/>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/res/headA/headA_resized.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QGraphicsView" name="head_two"/>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/res/headB/headB_resized.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -471,7 +498,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>968</width>
+     <width>1420</width>
      <height>22</height>
     </rect>
    </property>
@@ -484,6 +511,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="res/headA_res.qrc"/>
+ </resources>
  <connections/>
 </ui>
