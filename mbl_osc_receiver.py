@@ -6,9 +6,12 @@ from osc4py3 import oscchannel as osch
 class MBLOscReceiver:
 
 
-    def __init__(self, port=9001):
-        #init 
-        self.oscReceiver
+    def __init__(self, server_name, address="127.0.0.1", port=9001):
+        #
+        self.finished = False
+        osc_startup()
+        osc_udp_server(address, port, server_name)
+        osc_method("/Rvalues/*", self.handlerfunction, argscheme=osm.OSCARG_ADDRESS + osm.OSCARG_DATAUNPACK)
         self.initialize()
 
     def initialize(self):
@@ -21,17 +24,34 @@ class MBLOscReceiver:
         self.score = 0
         self.power1 = 0
         self.power2 = 0
+        self.start()
 
-    def update(self):
+
+    def start(self):
+        while not self.finished:
+            # …
+            osc_process()
+            # …
+        osc_terminate()
+
+    def update(self, finished):
         #foo
+        self.finished = finished
+        if not self.finished:
+            self.start()
 
+    def handlerfunction(address, s, x, y):
+        # Will receive message address, and message data flattened in s, x, y
+        print(address)
+        print(s, x, y)
+        pass
 
     # Getters
     def get_scene(self):
         return self.scene
 
     def get_time(self):
-        return self.time    
+        return self.time
 
     def get_progress(self):
         return self.progress
@@ -76,4 +96,4 @@ class MBLOscReceiver:
     def set_power2(self, power2):
         self.power2 = power2
 
-        
+
