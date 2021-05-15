@@ -3,15 +3,15 @@ from osc4py3 import oscbuildparse
 from osc4py3 import oscmethod as osm
 from osc4py3 import oscchannel as osch
 
-class MBLOscReceiver:
 
+class MBLOscReceiver:
 
     def __init__(self, server_name, address="127.0.0.1", port=9001):
         #
         self.finished = False
-        osc_startup()
-        osc_udp_server(address, port, server_name)
-        osc_method("/Rvalues/*", self.handlerfunction, argscheme=osm.OSCARG_ADDRESS + osm.OSCARG_DATAUNPACK)
+        self.server_name = server_name
+        self.address = address
+        self.port = port
         self.initialize()
 
     def initialize(self):
@@ -26,8 +26,11 @@ class MBLOscReceiver:
         self.power2 = 0
         self.start()
 
-
     def start(self):
+        osc_startup()
+        osc_udp_server(self.address, self.port, self.server_name)
+        osc_method("/Rvalues/*", self.load_r_values,
+                   argscheme=osm.OSCARG_ADDRESS + osm.OSCARG_DATAUNPACK + osm.OSCARG_MESSAGE)
         while not self.finished:
             # …
             osc_process()
@@ -35,14 +38,13 @@ class MBLOscReceiver:
         osc_terminate()
 
     def update(self, finished):
-        #foo
+        # foo
         self.finished = finished
         if not self.finished:
             self.start()
 
-    def handlerfunction(address, s, x, y):
+    def load_r_values(self, address, s, x, y, message):
         # Will receive message address, and message data flattened in s, x, y
-        print(address)
         print(s, x, y)
         pass
 
@@ -95,5 +97,3 @@ class MBLOscReceiver:
 
     def set_power2(self, power2):
         self.power2 = power2
-
-
