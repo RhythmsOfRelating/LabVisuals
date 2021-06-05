@@ -1,24 +1,23 @@
 import sys
-
-from PyQt5.QtWidgets import QApplication, QDialog
 import time
-# from mbl_osc_receiver import MBLOscReceiver
+from PyQt5.QtWidgets import QApplication, QDialog
+from visuals.mbl_gui_window import MBL_GuiWindow
+from lsl.mbl_lsl_receiver import MBL_LSLReceiver
 
-# osc_receiver = MBLOscReceiver("Rvalues")
-# osc_receiver.initialize()
-from gui import Ui_MainWindow
-from lsl.mbl_lsl_receiver import MBLLSLReceiver
+
+def receive_data_threaded(receiver):
+    receiver.resolve_streams()
+    receiver.start_listener()
+    time.sleep(10)
+    receiver.stop_listener()
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    Dialog = QDialog()
-    ui = Ui_MainWindow()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    lsl_receiver = MBLLSLReceiver()
-    lsl_receiver.resolve_streams()
-    lsl_receiver.start_listener()
-    time.sleep(10)
-    # lsl_receiver.stop_listener()
+    gui_window = MBL_GuiWindow()
+    gui_window.show()
+    lsl_receiver = MBL_LSLReceiver()
+
     sys.exit(app.exec_())
+
+

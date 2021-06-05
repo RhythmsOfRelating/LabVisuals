@@ -5,7 +5,8 @@ from threading import Thread
 # more info on LSL in general here: https://labstreaminglayer.readthedocs.io/info/getting_started.html
 # you can get LSL from pip: python -m pip install pylsl
 
-class MBLLSLReceiver:
+
+class MBL_LSLReceiver:
 
     def __init__(self):
         self.thread = None
