@@ -8,6 +8,7 @@ def main():
 
     while 1:
         outlet.push_sample(sample)
+        print("Sample: ", sample)
         sample[0] += .01
         if sample[0] >= 1.0:
             sample[0] -= 1.0
@@ -17,7 +18,7 @@ def main():
         sample[2] += .03
         if sample[2] >= 1.0:
             sample[2] -= 1.0
-        time.sleep(.25)
+        time.sleep(.5)
 
 if __name__== '__main__':
     main()
