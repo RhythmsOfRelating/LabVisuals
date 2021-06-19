@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="res/headA">
+    <file>headA_resized.png</file>
+  </qresource>
+  <qresource prefix="res/headB">
+    <file>headB_resized.png</file>
+  </qresource>
+</RCC>

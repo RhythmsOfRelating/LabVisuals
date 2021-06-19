@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+osc4py3 = "*"
+numpy = "*"
+pyqt5 = "*"
+pyqt5-sip = "*"
+pyqt5-stubs = "*"
+pyqt5-tools = "*"
+pylsl = "*"
+pyxdf = "*"
+
+
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
