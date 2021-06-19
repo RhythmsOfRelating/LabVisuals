@@ -13,6 +13,7 @@ class MBL_LSLReceiver(QThread):
         self.data = []
         self.listen = False
         self.inlet = None
+        self.score = 0
 
     def resolve_streams(self):
         print("looking for RValues stream")
@@ -54,6 +55,7 @@ class MBL_LSLReceiver(QThread):
             # you can pass it a timeout value if you need to
             self.data, timestamp = self.inlet.pull_sample()
             print(timestamp, self.data)
+            self.score = max(self.data)
 
     def __del__(self):
         self.wait()
