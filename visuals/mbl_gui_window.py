@@ -1,6 +1,6 @@
 import time
-from PyQt5.QtCore import QTimer
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import QTimer, pyqtSignal
+from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication, QLabel
 
 from lsl.mbl_lsl_receiver import MBL_LSLReceiver
@@ -19,8 +19,15 @@ class MBL_GuiWindow(QMainWindow):
         self.receiver = MBL_LSLReceiver()
         self.receiver.start()
         self.last_time = time.time()
+
+        # prepare score label
         self.score = 0
         self.ui.score_value.setText(str(self.score))
+        self.ui.score_value.setStyleSheet('color: #ffffff')
+        self.ui.score_value.setFont(QFont('MS Shell Dlg 2', 16))
+
+        # creating signals
+        self.signalUpdateScore = pyqtSignal()
 
         # creating label
         self.head_label_a = QLabel(self)
@@ -53,7 +60,6 @@ class MBL_GuiWindow(QMainWindow):
         # start timer
         self.qTimer.start()
 
-
     def connect_signals_slots(self):
         print("No signals implemented yet")  # implement action connections
 
@@ -66,13 +72,13 @@ class MBL_GuiWindow(QMainWindow):
     def update_head_position(self):
         delta_time = time.time() - self.last_time
 
-        step = 450 * self.receiver.score * delta_time
+        step = 450 * self.receiver.correlation_score * delta_time
         self.head_label_a.move(300 + step, 200)
         self.head_label_b.move(800 - step, 200)
 
         self.last_time = time.time()
 
-        if self.receiver.score > 0.9:
+        if self.receiver.correlation_score > 0.9:
             self.score += 1
             self.ui.score_value.setText(str(self.score))
 

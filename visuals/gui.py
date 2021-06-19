@@ -271,7 +271,7 @@ class Ui_MainWindow(object):
         self.CentralArea.setContentsMargins(0, 0, 0, 0)
         self.CentralArea.setObjectName("CentralArea")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(630, 0, 121, 41))
+        self.widget.setGeometry(QtCore.QRect(640, 0, 121, 41))
         self.widget.setObjectName("widget")
         self.ScoreBox = QtWidgets.QHBoxLayout(self.widget)
         self.ScoreBox.setContentsMargins(0, 0, 0, 0)
