@@ -1,5 +1,6 @@
 from pylsl import StreamInlet, resolve_stream
 from PyQt5.QtCore import QThread
+import numpy as np
 
 # more info on LSL in python here: https://github.com/labstreaminglayer/liblsl-Python
 # more info on LSL in general here: https://labstreaminglayer.readthedocs.io/info/getting_started.html
@@ -55,7 +56,7 @@ class MBL_LSLReceiver(QThread):
             # you can pass it a timeout value if you need to
             self.data, timestamp = self.inlet.pull_sample()
             print(timestamp, self.data)
-            self.score = max(self.data)
+            self.score = np.mean(self.data)
 
     def __del__(self):
         self.wait()

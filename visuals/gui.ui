@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1222</width>
-    <height>746</height>
+    <width>1212</width>
+    <height>738</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -194,7 +194,7 @@
       <rect>
        <x>10</x>
        <y>280</y>
-       <width>93</width>
+       <width>81</width>
        <height>28</height>
       </rect>
      </property>
@@ -202,12 +202,12 @@
       <string>Start</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="stopButton">
      <property name="geometry">
       <rect>
        <x>102</x>
        <y>280</y>
-       <width>91</width>
+       <width>71</width>
        <height>28</height>
       </rect>
      </property>
@@ -301,7 +301,7 @@ border-color: rgb(255, 255, 255);</string>
       <x>0</x>
       <y>430</y>
       <width>191</width>
-      <height>151</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -411,36 +411,6 @@ border-color: rgb(255, 255, 255);</string>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="QLabel" name="score_label">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Score</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="score_value">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
          <widget class="QLabel" name="power_one_label">
@@ -508,11 +478,43 @@ border-color: rgb(255, 255, 255);</string>
      <rect>
       <x>189</x>
       <y>50</y>
-      <width>1021</width>
+      <width>1261</width>
       <height>531</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="CentralArea"/>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>0</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ScoreBox">
+     <item>
+      <widget class="QLabel" name="score_label">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#ffffff;&quot;&gt;Score:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="score_value">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#ffffff;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -520,7 +522,7 @@ border-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1222</width>
+     <width>1212</width>
      <height>26</height>
     </rect>
    </property>

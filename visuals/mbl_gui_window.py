@@ -1,3 +1,4 @@
+import time
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication, QLabel
@@ -17,6 +18,9 @@ class MBL_GuiWindow(QMainWindow):
         self.connect_signals_slots()
         self.receiver = MBL_LSLReceiver()
         self.receiver.start()
+        self.last_time = time.time()
+        self.score = 0
+        self.ui.score_value.setText(str(self.score))
 
         # creating label
         self.head_label_a = QLabel(self)
@@ -36,15 +40,10 @@ class MBL_GuiWindow(QMainWindow):
         self.head_label_a.setStyleSheet("background-color: rgba(255, 255, 255, 0)")
         self.head_label_b.setStyleSheet("background-color: rgba(255, 255, 255, 0)")
 
-
-        #self.ui.CentralArea.addWidget(self.head_label_a)
-        #self.ui.CentralArea.addWidget(self.head_label_b)
-
         self.head_label_a.move(300, 200)
         self.head_label_b.move(800, 200)
 
         # Update the interface every 0.5 seconds
-
         # make QTimer
         self.qTimer = QTimer()
         # set interval to 1 s
@@ -65,14 +64,18 @@ class MBL_GuiWindow(QMainWindow):
         self.thread.join()
 
     def update_head_position(self):
+        delta_time = time.time() - self.last_time
+
+        step = 450 * self.receiver.score * delta_time
+        self.head_label_a.move(300 + step, 200)
+        self.head_label_b.move(800 - step, 200)
+
+        self.last_time = time.time()
+
         if self.receiver.score > 0.9:
-            self.head_label_a.move(500, 200)
-            self.head_label_b.move(600, 200)
-        elif self.receiver.score > 0.95:
-            self.head_label_a.move(550, 200)
-            self.head_label_b.move(550, 200)
-        else:
-            self.reset_head_position()
+            self.score += 1
+            self.ui.score_value.setText(str(self.score))
+
 
     def reset_head_position(self):
         self.head_label_a.move(300, 200)
