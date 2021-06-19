@@ -25,15 +25,15 @@ The app expects an LSL stream called "RValues" that can be generated or opened u
 The app is currently under development and as it is, it will just start running without any possibility to change configurations.
 The following features are WIP and will be released in the order presented
 
-- [IMPL] Basic GUI with head placeholders
-- [IMPL] LSL data receiver
-- [IMPL] Multi-threading of the receiver process
-- [IMPL] Visual update based on the RValues
-- [IMPL] Score system
-- [WIP] Adjustable view settings
-- [WIP] Adjustable game settings
-- [WIP] Adjustable window size
-- [WIP] OSC data receiver
-- [WIP] Calibration scene
-- [WIP] Smoothing animations
-- [WIP] Advanced game scenarios
+- :white_check_mark: Basic GUI with head placeholders
+- :white_check_mark: LSL data receiver
+- :white_check_mark: Multi-threading of the receiver process
+- :white_check_mark: Visual update based on the RValues
+- :white_check_mark: Score system
+- :construction: Adjustable view settings
+- :construction: Adjustable game settings
+- :construction: Adjustable window size
+- :construction: OSC data receiver
+- :construction: Calibration scene
+- :construction: Smoothing animations
+- :construction: Advanced game scenarios
