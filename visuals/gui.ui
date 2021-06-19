@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1420</width>
-    <height>792</height>
+    <width>1222</width>
+    <height>746</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,9 +21,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>150</y>
+      <y>110</y>
       <width>191</width>
-      <height>221</height>
+      <height>331</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -38,7 +38,7 @@
        <x>10</x>
        <y>17</y>
        <width>171</width>
-       <height>154</height>
+       <height>239</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -183,35 +183,46 @@
       <rect>
        <x>10</x>
        <y>180</y>
-       <width>171</width>
+       <width>195</width>
        <height>31</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_13">
-      <item>
-       <widget class="QPushButton" name="startButton">
-        <property name="text">
-         <string>Start</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
-         <string>Stop</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <layout class="QHBoxLayout" name="horizontalLayout_13"/>
+    </widget>
+    <widget class="QPushButton" name="startButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>280</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>102</x>
+       <y>280</y>
+       <width>91</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Stop</string>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="SettingsBox">
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>40</y>
+      <y>10</y>
       <width>191</width>
-      <height>111</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -226,8 +237,8 @@ border-color: rgb(255, 255, 255);</string>
       <rect>
        <x>11</x>
        <y>21</y>
-       <width>171</width>
-       <height>75</height>
+       <width>183</width>
+       <height>78</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -288,7 +299,7 @@ border-color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>380</y>
+      <y>430</y>
       <width>191</width>
       <height>151</height>
      </rect>
@@ -305,7 +316,7 @@ border-color: rgb(255, 255, 255);</string>
        <x>11</x>
        <y>20</y>
        <width>171</width>
-       <height>128</height>
+       <height>181</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -497,26 +508,11 @@ border-color: rgb(255, 255, 255);</string>
      <rect>
       <x>189</x>
       <y>50</y>
-      <width>1261</width>
-      <height>481</height>
+      <width>1021</width>
+      <height>531</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="CentralArea">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/res/headA/headA_resized.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/res/headB/headB_resized.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QHBoxLayout" name="CentralArea"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -524,8 +520,8 @@ border-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1420</width>
-     <height>18</height>
+     <width>1222</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuOptions">
