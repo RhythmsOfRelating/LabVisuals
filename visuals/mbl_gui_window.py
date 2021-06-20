@@ -20,6 +20,10 @@ class MBL_GuiWindow(QMainWindow):
         self.receiver.start()
         self.last_time = time.time()
 
+        # Hide GUI
+        self.ui.VisualsBox.setEnabled(False)
+        self.ui.SettingsBox.setEnabled(False)
+
         # prepare score label
         self.score = 0
         self.ui.score_value.setText(str(self.score))
