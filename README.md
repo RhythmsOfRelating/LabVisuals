@@ -30,6 +30,7 @@ The following features are WIP and will be released in the order presented
 - :white_check_mark: Multi-threading of the receiver process
 - :white_check_mark: Visual update based on the RValues
 - :white_check_mark: Score system
+- :construction: Testing with a real setup
 - :construction: Adjustable view settings
 - :construction: Adjustable game settings
 - :construction: Adjustable window size
